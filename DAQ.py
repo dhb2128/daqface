@@ -118,7 +118,7 @@ class AnalogInput(Task):
 class TriggeredAnalogInput(Task):
     def __init__(self, device, channels, samprate, secs, trigger_source):
         Task.__init__(self)
-        self.CreateAIVoltageChan(device, "", DAQmx_Val_Cfg_Default, -10.0, 10.0, DAQmx_Val_Volts, None)
+        self.CreateAOVoltageChan(device, "", DAQmx_Val_Cfg_Default, -10.0, 10.0, DAQmx_Val_Volts, None)
 
         self.read = int32()
         self.totalLength = numpy.uint32(samprate*secs)
@@ -138,6 +138,33 @@ class TriggeredAnalogInput(Task):
         self.StopTask()
         self.ClearTask()
         return 0
+
+
+class AnalogOutput(Task):
+    def __init__(self, device, channels, samprate, secs, write):
+        Task.__init__(self)
+        self.CreateAOVoltageChan(device, "", -10.0, 10.0, DAQmx_Val_Volts, None)
+
+        self.sampsPerChanWritten = int32()
+        self.totalLength = numpy.uint32(samprate*secs)
+
+        self.CfgSampClkTiming('', samprate, DAQmx_Val_Rising, DAQmx_Val_FiniteSamps, numpy.uint64(self.totalLength))
+        self.AutoRegisterDoneEvent(0)
+
+        self.WriteAnalogF64(write.shape[1], 0, -1, DAQmx_Val_GroupByChannel,
+                            writeAO, byref(sampsPerChanWrittenAO), None)
+        self.StartTask()
+
+    def DoneCallback(self, status):
+        print status
+        self.StopTask()
+        self.ClearTask()
+        return 0
+
+
+# region [MultiTasks]
+
+# TODO - write multis
 
 # TODO TESTING #
 # DigitalOut('cDAQ1Mod1/port0/line0, cDAQ1Mod2/port0/line0',1000.0,1.0,numpy.zeros((2,1000)))
