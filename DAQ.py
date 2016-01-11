@@ -10,7 +10,6 @@ from PyDAQmx import *
 from ctypes import *
 import Utils as Util
 import numpy
-import matplotlib.pyplot as plt
 
 # region [DigitalTasks]
 
@@ -104,6 +103,7 @@ class AnalogInput(Task):
         self.WaitUntilTaskDone(-1)
         self.AutoRegisterDoneEvent(0)
 
+    def DoTask(self):
         self.StartTask()
         self.ReadAnalogF64(self.totalLength, -1, DAQmx_Val_GroupByChannel, self.analogRead, self.totalLength*channels,
                            byref(self.read), None)
@@ -118,7 +118,7 @@ class AnalogInput(Task):
 class TriggeredAnalogInput(Task):
     def __init__(self, device, channels, samprate, secs, trigger_source):
         Task.__init__(self)
-        self.CreateAOVoltageChan(device, "", DAQmx_Val_Cfg_Default, -10.0, 10.0, DAQmx_Val_Volts, None)
+        self.CreateAIVoltageChan(device, "", DAQmx_Val_Cfg_Default, -10.0, 10.0, DAQmx_Val_Volts, None)
 
         self.read = int32()
         self.totalLength = numpy.uint32(samprate*secs)
@@ -141,7 +141,7 @@ class TriggeredAnalogInput(Task):
 
 
 class AnalogOutput(Task):
-    def __init__(self, device, channels, samprate, secs, write):
+    def __init__(self, device, samprate, secs, write):
         Task.__init__(self)
         self.CreateAOVoltageChan(device, "", -10.0, 10.0, DAQmx_Val_Volts, None)
 
@@ -164,9 +164,18 @@ class AnalogOutput(Task):
 
 # region [MultiTasks]
 
-# TODO - write multis
+
+
+
+
+
+
+
+# TODO - write multi tasks
 
 # TODO TESTING #
+
+
 # DigitalOut('cDAQ1Mod1/port0/line0, cDAQ1Mod2/port0/line0',1000.0,1.0,numpy.zeros((2,1000)))
 
 # out = DigitalInput('cDAQ1Mod2/port0/line0:1', 2, 1000.0, 1.0)
