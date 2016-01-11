@@ -10,6 +10,7 @@ from PyDAQmx import *
 from ctypes import *
 import Utils as Util
 import numpy
+import matplotlib.pyplot as plt
 
 # region [DigitalTasks]
 
@@ -96,6 +97,7 @@ class AnalogInput(Task):
         self.CreateAIVoltageChan(device, "", DAQmx_Val_Cfg_Default, -10.0, 10.0, DAQmx_Val_Volts, None)
 
         self.read = int32()
+        self.channels = channels
         self.totalLength = numpy.uint32(samprate*secs)
         self.analogRead = numpy.zeros((channels, self.totalLength), dtype=numpy.float64)
 
@@ -105,7 +107,7 @@ class AnalogInput(Task):
 
     def DoTask(self):
         self.StartTask()
-        self.ReadAnalogF64(self.totalLength, -1, DAQmx_Val_GroupByChannel, self.analogRead, self.totalLength*channels,
+        self.ReadAnalogF64(self.totalLength, -1, DAQmx_Val_GroupByChannel, self.analogRead, self.totalLength*self.channels,
                            byref(self.read), None)
 
     def DoneCallback(self, status):
@@ -175,13 +177,8 @@ class AnalogOutput(Task):
 
 # TODO TESTING #
 
-
-# DigitalOut('cDAQ1Mod1/port0/line0, cDAQ1Mod2/port0/line0',1000.0,1.0,numpy.zeros((2,1000)))
-
-# out = DigitalInput('cDAQ1Mod2/port0/line0:1', 2, 1000.0, 1.0)
-
-# out = TriggeredDigitalInput('cDAQ1Mod2/port0/line0:1', 2, 1000.0, 1.0, '/cDAQ1/PFI0')
-# plt.plot(out.digitalData[0])
-
-# out = TriggeredAnalogInput('cDAQ1Mod3/ai0:1', 2, 1000.0, 1.0, '/cDAQ1/PFI0')
-# plt.plot(out.analogRead[0])
+# a = AnalogInput('cDAQ1Mod3/ai0', 1, 1000, 1)
+# a.DoTask()
+#
+# plt.plot(a.analogRead[0])
+# plt.show()
