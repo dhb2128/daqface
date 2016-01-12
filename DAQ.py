@@ -176,7 +176,22 @@ class AnalogOutput(Task):
 # region [MultiTasks]
 
 
+class MultiTaskDO(Task):
+    def __init__(self, ai_device, ai_channels, di_device, di_channels, do_device, samprate, secs, write, sync_clock):
+        Task.__init__(self)
+
+        self.ai_task = AnalogInput(ai_device, ai_channels, samprate, secs, clock=sync_clock)
+        self.di_task = DigitalInput(di_device, di_channels, samprate, secs, clock=sync_clock)
+        self.do_task = DigitalOut(do_device, samprate, secs, write, clock=sync_clock)
+
+    def DoTask(self):
+        self.di_task.DoTask()
+        self.do_task.DoTask()
+        self.ai_task.DoTask()
+
+
 # TODO - write multi tasks
+
 
 # TODO TESTING #
 
