@@ -191,12 +191,15 @@ class MultiTaskDO(Task):
     def DoTask(self):
         self.di_task.StartTask()
         print('got here')
-        self.di_task.ReadDigitalU32(self.di_task.totalLength, -1, DAQmx_Val_GroupByChannel, self.di_task.digitalData,
-                           self.di_task.totalLength * self.di_task.channels, byref(self.di_task.read), None)
+
         print('got here')
         self.ai_task.StartTask()
+
         self.ai_task.ReadAnalogF64(self.ai_task.totalLength, -1, DAQmx_Val_GroupByChannel, self.ai_task.analogRead,
                            self.ai_task.totalLength*self.ai_task.channels, byref(self.ai_task.read), None)
+        self.di_task.ReadDigitalU32(self.di_task.totalLength, -1, DAQmx_Val_GroupByChannel, self.di_task.digitalData,
+                            self.di_task.totalLength * self.di_task.channels, byref(self.di_task.read), None)
+
 
 # TODO TESTING #
 
@@ -209,7 +212,7 @@ a = MultiTaskDO('cDAQ1Mod3/ai0', 1, 'cDAQ1Mod2/port0/line0', 1, 'cDAQ1Mod1/port0
                 dtype=numpy.uint32), '/cDAQ1/ai/SampleClock')
 a.DoTask()
 
-plt.plot(a.ai_task.analogRead[0])
+plt.plot(a.di_task.digitalData[0])
 plt.show()
 
 # a = AnalogInput('cDAQ1Mod3/ai0', 1, 1000, 1)
