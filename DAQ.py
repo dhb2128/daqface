@@ -10,9 +10,8 @@ from PyDAQmx import *
 from ctypes import *
 import Utils as Util
 import numpy
+import matplotlib.pyplot as plt
 
-
-# import matplotlib.pyplot as plt
 
 # region [DigitalTasks]
 
@@ -214,9 +213,27 @@ class MultiTask:
                                  None)
         DAQmxCreateDIChan(self.di_handle, di_device, "", DAQmx_Val_ChanPerLine)
 
-        self.a_read = int32()
+        self.ai_read = int32()
+        self.di_read = int32()
+        self.ai_channels = ai_channels
+        self.di_channels = di_channels
+        self.totalLength = numpy.uint32(samprate * secs)
+        self.analogData = numpy.zeros((self.ai_channels, self.totalLength), dtype=numpy.float64)
+        self.digitalData = numpy.ones((self.di_channels, self.totalLength), dtype=numpy.uint32)
+
+        DAQmxCfgSampClkTiming(self.ai_handle, '', samprate, DAQmx_Val_Rising, DAQmx_Val_FiniteSamps,
+                              numpy.uint64(self.totalLength))
+        DAQmxCfgSampClkTiming(self.di_handle, sync_clock, samprate, DAQmx_Val_Rising, DAQmx_Val_FiniteSamps,
+                              numpy.uint64(self.totalLength))
 
     def DoTask(self):
+        DAQmxStartTask(self.di_handle)
+        DAQmxStartTask(self.ai_handle)
+        DAQmxReadAnalogF64(self.ai_handle, self.totalLength, -1, DAQmx_Val_GroupByChannel, self.analogData,
+                           self.totalLength * self.ai_channels, byref(self.ai_read), None)
+        DAQmxReadDigitalU32(self.di_handle, self.totalLength, -1, DAQmx_Val_GroupByChannel, self.digitalData,
+                            self.totalLength * self.di_channels, byref(self.di_read), None)
+
 
 
 # TODO TESTING #
@@ -230,9 +247,8 @@ a = MultiTask('cDAQ1Mod3/ai0', 1, 'cDAQ1Mod2/port0/line0', 1, 'cDAQ1Mod1/port0/l
 
 a.DoTask()
 
-
-# plt.plot(a.di_task.digitalData[0])
-# plt.show()
+plt.plot(a.digitalData[0])
+plt.show()
 
 # a = AnalogInput('cDAQ1Mod3/ai0', 1, 1000, 1)
 # a.DoTask()

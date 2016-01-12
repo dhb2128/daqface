@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/DAQ.py" line="227" />
+    <bookmark url="file://$PROJECT_DIR$/DAQ.py" line="244" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96026072-02ee-44a8-9d2d-f2ec5bbb1300" name="Default" comment="">
@@ -28,15 +28,16 @@
             <file leaf-file-name="DAQ.py" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/DAQ.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.77178425">
-                    <caret line="216" column="29" selection-start-line="216" selection-start-column="29" selection-end-line="216" selection-end-column="29" />
+                  <state vertical-scroll-proportion="0.4329184">
+                    <caret line="229" column="38" selection-start-line="229" selection-start-column="38" selection-end-line="229" selection-end-column="38" />
                     <folding>
                       <element signature="e#112#133#0" expanded="true" />
-                      <element signature="e#1269#2264#0" expanded="false" />
-                      <element signature="e#2295#3124#0" expanded="false" />
-                      <element signature="e#4204#5233#0" expanded="false" />
-                      <element signature="e#5266#6052#0" expanded="false" />
-                      <element signature="e#6105#7077#0" expanded="false" />
+                      <element signature="e#1266#2261#0" expanded="false" />
+                      <element signature="e#2292#3121#0" expanded="false" />
+                      <element signature="e#3175#4160#0" expanded="false" />
+                      <element signature="e#4201#5230#0" expanded="false" />
+                      <element signature="e#5263#6049#0" expanded="false" />
+                      <element signature="e#6102#7074#0" expanded="false" />
                     </folding>
                   </state>
                 </provider>
@@ -389,11 +390,12 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#112#133#0" expanded="true" />
-            <element signature="e#1269#2264#0" expanded="false" />
-            <element signature="e#2295#3124#0" expanded="false" />
-            <element signature="e#4204#5233#0" expanded="false" />
-            <element signature="e#5266#6052#0" expanded="false" />
-            <element signature="e#6105#7077#0" expanded="false" />
+            <element signature="e#1266#2261#0" expanded="false" />
+            <element signature="e#2292#3121#0" expanded="false" />
+            <element signature="e#3175#4160#0" expanded="false" />
+            <element signature="e#4201#5230#0" expanded="false" />
+            <element signature="e#5263#6049#0" expanded="false" />
+            <element signature="e#6102#7074#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -404,11 +406,12 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#112#133#0" expanded="true" />
-            <element signature="e#1269#2264#0" expanded="false" />
-            <element signature="e#2295#3124#0" expanded="false" />
-            <element signature="e#4204#5233#0" expanded="false" />
-            <element signature="e#5266#6052#0" expanded="false" />
-            <element signature="e#6105#7077#0" expanded="false" />
+            <element signature="e#1266#2261#0" expanded="false" />
+            <element signature="e#2292#3121#0" expanded="false" />
+            <element signature="e#3175#4160#0" expanded="false" />
+            <element signature="e#4201#5230#0" expanded="false" />
+            <element signature="e#5263#6049#0" expanded="false" />
+            <element signature="e#6102#7074#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -430,15 +433,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DAQ.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.77178425">
-          <caret line="216" column="29" selection-start-line="216" selection-start-column="29" selection-end-line="216" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.4329184">
+          <caret line="229" column="38" selection-start-line="229" selection-start-column="38" selection-end-line="229" selection-end-column="38" />
           <folding>
             <element signature="e#112#133#0" expanded="true" />
-            <element signature="e#1269#2264#0" expanded="false" />
-            <element signature="e#2295#3124#0" expanded="false" />
-            <element signature="e#4204#5233#0" expanded="false" />
-            <element signature="e#5266#6052#0" expanded="false" />
-            <element signature="e#6105#7077#0" expanded="false" />
+            <element signature="e#1266#2261#0" expanded="false" />
+            <element signature="e#2292#3121#0" expanded="false" />
+            <element signature="e#3175#4160#0" expanded="false" />
+            <element signature="e#4201#5230#0" expanded="false" />
+            <element signature="e#5263#6049#0" expanded="false" />
+            <element signature="e#6102#7074#0" expanded="false" />
           </folding>
         </state>
       </provider>
