@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/DAQ.py" line="225" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="96026072-02ee-44a8-9d2d-f2ec5bbb1300" name="Default" comment="" />
+    <list default="true" id="96026072-02ee-44a8-9d2d-f2ec5bbb1300" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/unit_tests/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/unit_tests/test_digitalInput.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DAQ.py" afterPath="$PROJECT_DIR$/DAQ.py" />
+    </list>
     <ignored path="daqface.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,31 +24,64 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="DockManager">
+    <window id="2">
+      <content type="file-editors">
+        <state>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+            <file leaf-file-name="DAQ.py" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/DAQ.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="0.0">
+                    <caret line="222" column="23" selection-start-line="222" selection-start-column="23" selection-end-line="222" selection-end-column="23" />
+                    <folding>
+                      <element signature="e#112#133#0" expanded="true" />
+                      <element signature="e#1266#2261#0" expanded="false" />
+                      <element signature="e#2292#3121#0" expanded="false" />
+                      <element signature="e#3175#4160#0" expanded="false" />
+                      <element signature="e#4201#5230#0" expanded="false" />
+                      <element signature="e#5263#6049#0" expanded="false" />
+                      <element signature="e#6094#7947#0" expanded="false" />
+                      <marker date="1452877619953" expanded="false" signature="8054:8312" placeholder="..." />
+                      <marker date="1452877619953" expanded="false" signature="8314:8430" placeholder="..." />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="test_digitalInput.py" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/unit_tests/test_digitalInput.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="0.11627907">
+                    <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+                    <folding>
+                      <element signature="e#18#47#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="Task.py" pinned="false" current-in-tab="false">
+              <entry file="file://C:/Python27/PyDAQmx/Task.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="0.0">
+                    <caret line="81" column="8" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="8" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="daqface" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DAQ.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DAQ.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5942783">
-              <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
-              <folding>
-                <element signature="e#112#133#0" expanded="true" />
-                <element signature="e#278#1171#0" expanded="false" />
-                <element signature="e#1213#2195#0" expanded="false" />
-                <element signature="e#2226#3006#0" expanded="false" />
-                <element signature="e#3060#3989#0" expanded="false" />
-                <element signature="e#4030#5042#0" expanded="false" />
-                <element signature="e#5075#5846#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -57,14 +99,16 @@
       <list>
         <option value="$PROJECT_DIR$/__init__.py" />
         <option value="$PROJECT_DIR$/DAQ.py" />
+        <option value="$PROJECT_DIR$/test_digitalInput.py" />
+        <option value="$PROJECT_DIR$/unit_tests/test_digitalInput.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -91,6 +135,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -109,10 +155,22 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="daqface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="daqface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unit_tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -129,22 +187,73 @@
       </console-settings>
     </option>
   </component>
-  <component name="RunManager" selected="Python.DAQ">
-    <configuration default="false" name="DAQ" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\SpyderWorkspace\daqface\unit_tests" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python tests.Nosetests in test_digitalInput (1)">
+    <configuration default="false" name="Nosetest TestDigitalInput.test_connected_device" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
+      <envs />
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="daqface" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DAQ.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="SCRIPT_NAME" value="F:\SpyderWorkspace\daqface\unit_tests\test_digitalInput.py" />
+      <option name="CLASS_NAME" value="TestDigitalInput" />
+      <option name="METHOD_NAME" value="test_connected_device" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Nosetests in test_digitalInput" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="daqface" />
+      <option name="SCRIPT_NAME" value="F:\SpyderWorkspace\daqface\unit_tests\test_digitalInput.py" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Nosetests in test_digitalInput (1)" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/unit_tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="daqface" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/unit_tests/test_digitalInput.py" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -269,12 +378,34 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="1">
+    <configuration default="false" name="DAQ" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="daqface" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DAQ.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Python.DAQ" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Nosetest TestDigitalInput.test_connected_device" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Nosetests in test_digitalInput" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Nosetests in test_digitalInput (1)" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Python.DAQ" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Nosetests in test_digitalInput (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Nosetests in test_digitalInput" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Nosetest TestDigitalInput.test_connected_device" />
       </list>
     </recent_temporary>
   </component>
@@ -291,6 +422,38 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="Nosetests_in_test_digitalInput - 2016.01.15 at 17h 12m 53s.xml">
+      <configuration name="Nosetests in test_digitalInput" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_test_digitalInput - 2016.01.15 at 17h 13m 39s.xml">
+      <configuration name="Nosetests in test_digitalInput" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_test_digitalInput - 2016.01.15 at 17h 13m 58s.xml">
+      <configuration name="Nosetests in test_digitalInput" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_test_digitalInput - 2016.01.15 at 17h 14m 37s.xml">
+      <configuration name="Nosetests in test_digitalInput" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_test_digitalInput_(1) - 2016.01.15 at 17h 21m 08s.xml">
+      <configuration name="Nosetests in test_digitalInput (1)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_test_digitalInput_(1) - 2016.01.15 at 17h 21m 35s.xml">
+      <configuration name="Nosetests in test_digitalInput (1)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_test_digitalInput_(1) - 2016.01.15 at 17h 21m 59s.xml">
+      <configuration name="Nosetests in test_digitalInput (1)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_test_digitalInput_(1) - 2016.01.15 at 17h 23m 36s.xml">
+      <configuration name="Nosetests in test_digitalInput (1)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_test_digitalInput_(1) - 2016.01.15 at 17h 24m 18s.xml">
+      <configuration name="Nosetests in test_digitalInput (1)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_test_digitalInput_(1) - 2016.01.15 at 17h 24m 53s.xml">
+      <configuration name="Nosetests in test_digitalInput (1)" configurationId="tests" />
+    </history-entry>
+  </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
@@ -301,17 +464,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25605902" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27056277" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13744588" sideWeight="0.5057956" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40686274" sideWeight="0.49255952" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13744588" sideWeight="0.49420443" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36160713" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26960784" sideWeight="0.49702382" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38562092" sideWeight="0.5275298" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40686274" sideWeight="0.48065478" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.49702382" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38562092" sideWeight="0.47247022" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24925596" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.49702382" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -319,7 +483,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -355,7 +518,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -363,15 +526,27 @@
     <entry file="file://$PROJECT_DIR$/DAQ.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
             <element signature="e#112#133#0" expanded="true" />
-            <element signature="e#278#1171#0" expanded="false" />
-            <element signature="e#1213#2195#0" expanded="false" />
-            <element signature="e#2226#3006#0" expanded="false" />
-            <element signature="e#3060#3989#0" expanded="false" />
-            <element signature="e#4030#5042#0" expanded="false" />
-            <element signature="e#5075#5846#0" expanded="false" />
+            <element signature="e#1266#2261#0" expanded="false" />
+            <element signature="e#2292#3121#0" expanded="false" />
+            <element signature="e#3175#4160#0" expanded="false" />
+            <element signature="e#4201#5230#0" expanded="false" />
+            <element signature="e#5263#6049#0" expanded="false" />
+            <element signature="e#6094#7947#0" expanded="false" />
+            <marker date="1452877619953" expanded="false" signature="8054:8312" placeholder="..." />
+            <marker date="1452877619953" expanded="false" signature="8314:8430" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unit_tests/test_digitalInput.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#18#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -382,12 +557,32 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#112#133#0" expanded="true" />
-            <element signature="e#278#1171#0" expanded="false" />
-            <element signature="e#1213#2195#0" expanded="false" />
-            <element signature="e#2226#3006#0" expanded="false" />
-            <element signature="e#3060#3989#0" expanded="false" />
-            <element signature="e#4030#5042#0" expanded="false" />
-            <element signature="e#5075#5846#0" expanded="false" />
+            <element signature="e#1266#2261#0" expanded="false" />
+            <element signature="e#2292#3121#0" expanded="false" />
+            <element signature="e#3175#4160#0" expanded="false" />
+            <element signature="e#4201#5230#0" expanded="false" />
+            <element signature="e#5263#6049#0" expanded="false" />
+            <element signature="e#6094#7947#0" expanded="false" />
+            <marker date="1452877619953" expanded="false" signature="8054:8312" placeholder="..." />
+            <marker date="1452877619953" expanded="false" signature="8314:8430" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DAQ.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#112#133#0" expanded="true" />
+            <element signature="e#1266#2261#0" expanded="false" />
+            <element signature="e#2292#3121#0" expanded="false" />
+            <element signature="e#3175#4160#0" expanded="false" />
+            <element signature="e#4201#5230#0" expanded="false" />
+            <element signature="e#5263#6049#0" expanded="false" />
+            <element signature="e#6094#7947#0" expanded="false" />
+            <marker date="1452877619953" expanded="false" signature="8054:8312" placeholder="..." />
+            <marker date="1452877619953" expanded="false" signature="8314:8430" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -399,18 +594,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://C:/Python27/PyDAQmx/Task.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="81" column="8" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/DAQ.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5942783">
-          <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="222" column="23" selection-start-line="222" selection-start-column="23" selection-end-line="222" selection-end-column="23" />
           <folding>
             <element signature="e#112#133#0" expanded="true" />
-            <element signature="e#278#1171#0" expanded="false" />
-            <element signature="e#1213#2195#0" expanded="false" />
-            <element signature="e#2226#3006#0" expanded="false" />
-            <element signature="e#3060#3989#0" expanded="false" />
-            <element signature="e#4030#5042#0" expanded="false" />
-            <element signature="e#5075#5846#0" expanded="false" />
+            <element signature="e#1266#2261#0" expanded="false" />
+            <element signature="e#2292#3121#0" expanded="false" />
+            <element signature="e#3175#4160#0" expanded="false" />
+            <element signature="e#4201#5230#0" expanded="false" />
+            <element signature="e#5263#6049#0" expanded="false" />
+            <element signature="e#6094#7947#0" expanded="false" />
+            <marker date="1452877619953" expanded="false" signature="8054:8312" placeholder="..." />
+            <marker date="1452877619953" expanded="false" signature="8314:8430" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unit_tests/test_digitalInput.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11627907">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="e#18#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
