@@ -4,13 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/DAQ.py" line="225" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96026072-02ee-44a8-9d2d-f2ec5bbb1300" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/unit_tests/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/unit_tests/test_digitalInput.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DAQ.py" afterPath="$PROJECT_DIR$/DAQ.py" />
-    </list>
+    <list default="true" id="96026072-02ee-44a8-9d2d-f2ec5bbb1300" name="Default" comment="" />
     <ignored path="daqface.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,58 +17,6 @@
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
-  </component>
-  <component name="DockManager">
-    <window id="2">
-      <content type="file-editors">
-        <state>
-          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-            <file leaf-file-name="DAQ.py" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/DAQ.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.0">
-                    <caret line="222" column="23" selection-start-line="222" selection-start-column="23" selection-end-line="222" selection-end-column="23" />
-                    <folding>
-                      <element signature="e#112#133#0" expanded="true" />
-                      <element signature="e#1266#2261#0" expanded="false" />
-                      <element signature="e#2292#3121#0" expanded="false" />
-                      <element signature="e#3175#4160#0" expanded="false" />
-                      <element signature="e#4201#5230#0" expanded="false" />
-                      <element signature="e#5263#6049#0" expanded="false" />
-                      <element signature="e#6094#7947#0" expanded="false" />
-                      <marker date="1452877619953" expanded="false" signature="8054:8312" placeholder="..." />
-                      <marker date="1452877619953" expanded="false" signature="8314:8430" placeholder="..." />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="test_digitalInput.py" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/unit_tests/test_digitalInput.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.11627907">
-                    <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-                    <folding>
-                      <element signature="e#18#47#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="Task.py" pinned="false" current-in-tab="false">
-              <entry file="file://C:/Python27/PyDAQmx/Task.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.0">
-                    <caret line="81" column="8" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="8" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -107,8 +49,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -464,16 +406,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36160713" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25605902" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26960784" sideWeight="0.49702382" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38562092" sideWeight="0.5275298" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25541127" sideWeight="0.5263435" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40686274" sideWeight="0.48065478" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.49702382" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38562092" sideWeight="0.47247022" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25541127" sideWeight="0.47365648" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24925596" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.49702382" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -529,14 +471,14 @@
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
             <element signature="e#112#133#0" expanded="true" />
+            <element signature="e#279#1224#0" expanded="false" />
             <element signature="e#1266#2261#0" expanded="false" />
             <element signature="e#2292#3121#0" expanded="false" />
             <element signature="e#3175#4160#0" expanded="false" />
             <element signature="e#4201#5230#0" expanded="false" />
             <element signature="e#5263#6049#0" expanded="false" />
-            <element signature="e#6094#7947#0" expanded="false" />
-            <marker date="1452877619953" expanded="false" signature="8054:8312" placeholder="..." />
-            <marker date="1452877619953" expanded="false" signature="8314:8430" placeholder="..." />
+            <marker date="1452878911909" expanded="false" signature="8054:8312" placeholder="..." />
+            <marker date="1452878911909" expanded="false" signature="8314:8430" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -557,14 +499,14 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#112#133#0" expanded="true" />
+            <element signature="e#279#1224#0" expanded="false" />
             <element signature="e#1266#2261#0" expanded="false" />
             <element signature="e#2292#3121#0" expanded="false" />
             <element signature="e#3175#4160#0" expanded="false" />
             <element signature="e#4201#5230#0" expanded="false" />
             <element signature="e#5263#6049#0" expanded="false" />
-            <element signature="e#6094#7947#0" expanded="false" />
-            <marker date="1452877619953" expanded="false" signature="8054:8312" placeholder="..." />
-            <marker date="1452877619953" expanded="false" signature="8314:8430" placeholder="..." />
+            <marker date="1452878911909" expanded="false" signature="8054:8312" placeholder="..." />
+            <marker date="1452878911909" expanded="false" signature="8314:8430" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -575,14 +517,14 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#112#133#0" expanded="true" />
+            <element signature="e#279#1224#0" expanded="false" />
             <element signature="e#1266#2261#0" expanded="false" />
             <element signature="e#2292#3121#0" expanded="false" />
             <element signature="e#3175#4160#0" expanded="false" />
             <element signature="e#4201#5230#0" expanded="false" />
             <element signature="e#5263#6049#0" expanded="false" />
-            <element signature="e#6094#7947#0" expanded="false" />
-            <marker date="1452877619953" expanded="false" signature="8054:8312" placeholder="..." />
-            <marker date="1452877619953" expanded="false" signature="8314:8430" placeholder="..." />
+            <marker date="1452878911909" expanded="false" signature="8054:8312" placeholder="..." />
+            <marker date="1452878911909" expanded="false" signature="8314:8430" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -596,36 +538,36 @@
     </entry>
     <entry file="file://C:/Python27/PyDAQmx/Task.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="2.1631322">
           <caret line="81" column="8" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/unit_tests/test_digitalInput.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47145188">
+          <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
+          <folding>
+            <element signature="e#18#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/DAQ.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="222" column="23" selection-start-line="222" selection-start-column="23" selection-end-line="222" selection-end-column="23" />
+        <state vertical-scroll-proportion="-0.4812398">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding>
             <element signature="e#112#133#0" expanded="true" />
+            <element signature="e#279#1224#0" expanded="false" />
             <element signature="e#1266#2261#0" expanded="false" />
             <element signature="e#2292#3121#0" expanded="false" />
             <element signature="e#3175#4160#0" expanded="false" />
             <element signature="e#4201#5230#0" expanded="false" />
             <element signature="e#5263#6049#0" expanded="false" />
-            <element signature="e#6094#7947#0" expanded="false" />
-            <marker date="1452877619953" expanded="false" signature="8054:8312" placeholder="..." />
-            <marker date="1452877619953" expanded="false" signature="8314:8430" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unit_tests/test_digitalInput.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11627907">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <element signature="e#18#47#0" expanded="true" />
+            <marker date="1452878911909" expanded="false" signature="8054:8312" placeholder="..." />
+            <marker date="1452878911909" expanded="false" signature="8314:8430" placeholder="..." />
           </folding>
         </state>
       </provider>
