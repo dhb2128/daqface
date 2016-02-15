@@ -11,6 +11,7 @@ from ctypes import *
 import Utils as Util
 import numpy
 import matplotlib.pyplot as plt
+import time
 
 
 # region [DigitalTasks]
@@ -181,6 +182,53 @@ class AnalogOutput(Task):
 # region [MultiTasks]
 
 
+class DoAiMultiTask:
+    def __init__(self, ai_device, ai_channels, do_device, samp_rate, secs, write, sync_clock):
+        self.ai_handle = TaskHandle(0)
+        self.do_handle = TaskHandle(1)
+
+        DAQmxCreateTask("", byref(self.ai_handle))
+        DAQmxCreateTask("", byref(self.do_handle))
+
+        DAQmxCreateAIVoltageChan(self.ai_handle, ai_device, "", DAQmx_Val_Diff, -10.0, 10.0, DAQmx_Val_Volts,
+                                 None)
+        DAQmxCreateDOChan(self.do_handle, do_device, "", DAQmx_Val_ChanPerLine)
+
+        self.ai_read = int32()
+        self.ai_channels = ai_channels
+        self.sampsPerChanWritten = int32()
+        self.write = Util.binary_to_digital_map(write)
+
+        self.totalLength = numpy.uint64(samp_rate * secs)
+        self.analogData = numpy.zeros((self.ai_channels, self.totalLength), dtype=numpy.float64)
+
+        DAQmxCfgSampClkTiming(self.ai_handle, '', samp_rate, DAQmx_Val_Rising, DAQmx_Val_FiniteSamps,
+                              numpy.uint64(self.totalLength))
+        DAQmxCfgSampClkTiming(self.do_handle, sync_clock, samp_rate, DAQmx_Val_Rising, DAQmx_Val_FiniteSamps,
+                              numpy.uint64(self.totalLength))
+
+    def DoTask(self):
+        DAQmxWriteDigitalU32(self.do_handle, self.write.shape[1], 0, -1, DAQmx_Val_GroupByChannel, self.write,
+                             byref(self.sampsPerChanWritten), None)
+
+        DAQmxStartTask(self.do_handle)
+        DAQmxStartTask(self.ai_handle)
+
+        DAQmxReadAnalogF64(self.ai_handle, self.totalLength, -1, DAQmx_Val_GroupByChannel, self.analogData,
+                           numpy.uint32(self.ai_channels*self.totalLength), byref(self.ai_read), None)
+
+        self.ClearTasks()
+        return self.analogData
+
+    def ClearTasks(self):
+        time.sleep(0.05)
+        DAQmxStopTask(self.do_handle)
+        DAQmxStopTask(self.ai_handle)
+
+        DAQmxClearTask(self.do_handle)
+        DAQmxClearTask(self.ai_handle)
+
+
 class MultiTask:
     def __init__(self, ai_device, ai_channels, di_device, di_channels, do_device, samprate, secs, write, sync_clock):
         self.ai_handle = TaskHandle(0)
@@ -191,6 +239,7 @@ class MultiTask:
         DAQmxCreateTask("", byref(self.di_handle))
         DAQmxCreateTask("", byref(self.do_handle))
 
+        # NOTE - Cfg_Default values may differ for different DAQ hardware
         DAQmxCreateAIVoltageChan(self.ai_handle, ai_device, "", DAQmx_Val_Cfg_Default, -10.0, 10.0, DAQmx_Val_Volts,
                                  None)
         DAQmxCreateDIChan(self.di_handle, di_device, "", DAQmx_Val_ChanPerLine)
@@ -211,6 +260,7 @@ class MultiTask:
     def DoTask(self):
         DAQmxStartTask(self.di_handle)
         DAQmxStartTask(self.ai_handle)
+
         DAQmxReadAnalogF64(self.ai_handle, self.totalLength, -1, DAQmx_Val_GroupByChannel, self.analogData,
                            self.totalLength * self.ai_channels, byref(self.ai_read), None)
         DAQmxReadDigitalU32(self.di_handle, self.totalLength, -1, DAQmx_Val_GroupByChannel, self.digitalData,
@@ -219,9 +269,24 @@ class MultiTask:
 
 
 # TODO TESTING #
+# region DoAiMultiTaskTest
+# a = DoAiMultiTask('cDAQ1Mod3/ai0', 1, 'cDAQ1Mod1/port0/line0', 1000.0, 1.0, numpy.zeros((2, 1000)),
+#                   '/cDAQ1/ai/SampleClock')
+# analog = a.DoTask()
+#
+# plt.plot(analog[0])
+# plt.show()
+# endregion
+
+# region simple digital test
+# DigitalOutput test
+# a = DigitalOut('cDAQ1Mod1/port0/line0:1', 1, 1000, numpy.zeros((2, 1000)), clock='')
+# a.DoTask()
+
 # DigitalInput test
 # a = DigitalInput('cDAQ1Mod2/port0/line0', 1, 1000, 1)
 # a.DoTask()
+# endregion
 
 # MultiTask test
 # a = MultiTask('cDAQ1Mod3/ai0', 1, 'cDAQ1Mod2/port0/line0', 1, 'cDAQ1Mod1/port0/line0', 1000, 2, numpy.zeros((1, 2000),
