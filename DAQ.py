@@ -11,25 +11,28 @@ from ctypes import *
 import Utils as Util
 import numpy
 import matplotlib.pyplot as plt
+import time
+
 
 # region [DigitalTasks]
 
 
 class DigitalInput(Task):
-    def __init__(self, device, channels, samprate, secs):
+    def __init__(self, device, channels, samprate, secs, clock=''):
         Task.__init__(self)
         self.CreateDIChan(device, "", DAQmx_Val_ChanPerLine)
 
         self.read = int32()
         self.channels = channels
         self.totalLength = numpy.uint32(samprate * secs)
-        self.digitalData = numpy.zeros((channels, self.totalLength), dtype=numpy.uint32)
+        self.digitalData = numpy.ones((channels, self.totalLength), dtype=numpy.uint32)
 
-        self.CfgSampClkTiming('', samprate, DAQmx_Val_Rising, DAQmx_Val_FiniteSamps, numpy.uint64(self.totalLength))
+        self.CfgSampClkTiming(clock, samprate, DAQmx_Val_Rising, DAQmx_Val_FiniteSamps, numpy.uint64(self.totalLength))
         self.WaitUntilTaskDone(-1)
         self.AutoRegisterDoneEvent(0)
 
     def DoTask(self):
+        print('Starting digital input')
         self.StartTask()
         self.ReadDigitalU32(self.totalLength, -1, DAQmx_Val_GroupByChannel, self.digitalData,
                             self.totalLength * self.channels, byref(self.read), None)
@@ -42,7 +45,7 @@ class DigitalInput(Task):
 
 
 class TriggeredDigitalInput(Task):
-    def __init__(self, device, channels, samprate, secs, trigger_source):
+    def __init__(self, device, channels, samprate, secs, trigger_source, clock=''):
         Task.__init__(self)
         self.CreateDIChan(device, "", DAQmx_Val_ChanPerLine)
 
@@ -51,7 +54,7 @@ class TriggeredDigitalInput(Task):
         self.totalLength = numpy.uint32(samprate * secs)
         self.digitalData = numpy.zeros((channels, self.totalLength), dtype=numpy.uint32)
 
-        self.CfgSampClkTiming('', samprate, DAQmx_Val_Rising, DAQmx_Val_FiniteSamps, numpy.uint64(self.totalLength))
+        self.CfgSampClkTiming(clock, samprate, DAQmx_Val_Rising, DAQmx_Val_FiniteSamps, numpy.uint64(self.totalLength))
         self.WaitUntilTaskDone(-1)
         self.CfgDigEdgeStartTrig(trigger_source, DAQmx_Val_Rising)
         self.AutoRegisterDoneEvent(0)
@@ -69,26 +72,27 @@ class TriggeredDigitalInput(Task):
 
 
 class DigitalOut(Task):
-    def __init__(self, device, samprate, secs, write):
+    def __init__(self, device, samprate, secs, write, clock=''):
         Task.__init__(self)
         self.CreateDOChan(device, "", DAQmx_Val_ChanPerLine)
 
         self.sampsPerChanWritten = int32()
         self.totalLength = samprate * secs
-        self.CfgSampClkTiming('', samprate, DAQmx_Val_Rising, DAQmx_Val_FiniteSamps, numpy.uint64(self.totalLength))
+        self.CfgSampClkTiming(clock, samprate, DAQmx_Val_Rising, DAQmx_Val_FiniteSamps, numpy.uint64(self.totalLength))
 
         self.AutoRegisterDoneEvent(0)
 
         self.write = Util.binaryToDigitalMap(write)
 
     def DoTask(self):
-        self.WriteDigitalU32(self.write.shape[1], 0, -1, DAQmx_Val_GroupByChannel, self.write, byref(self.sampsPerChanWritten),
-                             None)
+        print ('Starting digital output')
+        self.WriteDigitalU32(self.write.shape[1], 0, -1, DAQmx_Val_GroupByChannel, self.write,
+                             byref(self.sampsPerChanWritten), None)
 
         self.StartTask()
 
     def DoneCallback(self, status):
-        print status.value
+        print status
         self.StopTask()
         self.ClearTask()
         return 0
@@ -98,23 +102,24 @@ class DigitalOut(Task):
 
 
 class AnalogInput(Task):
-    def __init__(self, device, channels, samprate, secs):
+    def __init__(self, device, channels, samprate, secs, clock=''):
         Task.__init__(self)
         self.CreateAIVoltageChan(device, "", DAQmx_Val_Cfg_Default, -10.0, 10.0, DAQmx_Val_Volts, None)
 
         self.read = int32()
         self.channels = channels
-        self.totalLength = numpy.uint32(samprate*secs)
+        self.totalLength = numpy.uint32(samprate * secs)
         self.analogRead = numpy.zeros((channels, self.totalLength), dtype=numpy.float64)
 
-        self.CfgSampClkTiming('', samprate, DAQmx_Val_Rising, DAQmx_Val_FiniteSamps, numpy.uint64(self.totalLength))
+        self.CfgSampClkTiming(clock, samprate, DAQmx_Val_Rising, DAQmx_Val_FiniteSamps, numpy.uint64(self.totalLength))
         self.WaitUntilTaskDone(-1)
         self.AutoRegisterDoneEvent(0)
 
     def DoTask(self):
+        print('Starting analog input')
         self.StartTask()
-        self.ReadAnalogF64(self.totalLength, -1, DAQmx_Val_GroupByChannel, self.analogRead, self.totalLength*self.channels,
-                           byref(self.read), None)
+        self.ReadAnalogF64(self.totalLength, -1, DAQmx_Val_GroupByChannel, self.analogRead,
+                           self.totalLength * self.channels, byref(self.read), None)
 
     def DoneCallback(self, status):
         print status
@@ -124,24 +129,24 @@ class AnalogInput(Task):
 
 
 class TriggeredAnalogInput(Task):
-    def __init__(self, device, channels, samprate, secs, trigger_source):
+    def __init__(self, device, channels, samprate, secs, trigger_source, clock=''):
         Task.__init__(self)
         self.CreateAIVoltageChan(device, "", DAQmx_Val_Cfg_Default, -10.0, 10.0, DAQmx_Val_Volts, None)
 
         self.read = int32()
         self.channels = channels
-        self.totalLength = numpy.uint32(samprate*secs)
+        self.totalLength = numpy.uint32(samprate * secs)
         self.analogRead = numpy.zeros((channels, self.totalLength), dtype=numpy.float64)
 
-        self.CfgSampClkTiming('', samprate, DAQmx_Val_Rising, DAQmx_Val_FiniteSamps, numpy.uint64(self.totalLength))
+        self.CfgSampClkTiming(clock, samprate, DAQmx_Val_Rising, DAQmx_Val_FiniteSamps, numpy.uint64(self.totalLength))
         self.WaitUntilTaskDone(-1)
         self.CfgDigEdgeStartTrig(trigger_source, DAQmx_Val_Rising)
         self.AutoRegisterDoneEvent(0)
 
     def DoTask(self):
         self.StartTask()
-        self.ReadAnalogF64(self.totalLength, -1, DAQmx_Val_GroupByChannel, self.analogRead, self.totalLength*self.channels,
-                           byref(self.read), None)
+        self.ReadAnalogF64(self.totalLength, -1, DAQmx_Val_GroupByChannel, self.analogRead,
+                           self.totalLength * self.channels, byref(self.read), None)
 
     def DoneCallback(self, status):
         print status
@@ -151,15 +156,15 @@ class TriggeredAnalogInput(Task):
 
 
 class AnalogOutput(Task):
-    def __init__(self, device, samprate, secs, write):
+    def __init__(self, device, samprate, secs, write, clock=''):
         Task.__init__(self)
         self.CreateAOVoltageChan(device, "", -10.0, 10.0, DAQmx_Val_Volts, None)
 
         self.sampsPerChanWritten = int32()
         self.write = write
-        self.totalLength = numpy.uint32(samprate*secs)
+        self.totalLength = numpy.uint32(samprate * secs)
 
-        self.CfgSampClkTiming('', samprate, DAQmx_Val_Rising, DAQmx_Val_FiniteSamps, numpy.uint64(self.totalLength))
+        self.CfgSampClkTiming(clock, samprate, DAQmx_Val_Rising, DAQmx_Val_FiniteSamps, numpy.uint64(self.totalLength))
         self.AutoRegisterDoneEvent(0)
 
     def DoTask(self):
@@ -177,16 +182,122 @@ class AnalogOutput(Task):
 # region [MultiTasks]
 
 
+class DoAiMultiTask:
+    def __init__(self, ai_device, ai_channels, do_device, samp_rate, secs, write, sync_clock):
+        self.ai_handle = TaskHandle(0)
+        self.do_handle = TaskHandle(1)
+
+        DAQmxCreateTask("", byref(self.ai_handle))
+        DAQmxCreateTask("", byref(self.do_handle))
+
+        DAQmxCreateAIVoltageChan(self.ai_handle, ai_device, "", DAQmx_Val_Diff, -10.0, 10.0, DAQmx_Val_Volts,
+                                 None)
+        DAQmxCreateDOChan(self.do_handle, do_device, "", DAQmx_Val_ChanPerLine)
+
+        self.ai_read = int32()
+        self.ai_channels = ai_channels
+        self.sampsPerChanWritten = int32()
+        self.write = Util.binary_to_digital_map(write)
+
+        self.totalLength = numpy.uint64(samp_rate * secs)
+        self.analogData = numpy.zeros((self.ai_channels, self.totalLength), dtype=numpy.float64)
+
+        DAQmxCfgSampClkTiming(self.ai_handle, '', samp_rate, DAQmx_Val_Rising, DAQmx_Val_FiniteSamps,
+                              numpy.uint64(self.totalLength))
+        DAQmxCfgSampClkTiming(self.do_handle, sync_clock, samp_rate, DAQmx_Val_Rising, DAQmx_Val_FiniteSamps,
+                              numpy.uint64(self.totalLength))
+
+    def DoTask(self):
+        DAQmxWriteDigitalU32(self.do_handle, self.write.shape[1], 0, -1, DAQmx_Val_GroupByChannel, self.write,
+                             byref(self.sampsPerChanWritten), None)
+
+        DAQmxStartTask(self.do_handle)
+        DAQmxStartTask(self.ai_handle)
+
+        DAQmxReadAnalogF64(self.ai_handle, self.totalLength, -1, DAQmx_Val_GroupByChannel, self.analogData,
+                           numpy.uint32(self.ai_channels*self.totalLength), byref(self.ai_read), None)
+
+        self.ClearTasks()
+        return self.analogData
+
+    def ClearTasks(self):
+        time.sleep(0.05)
+        DAQmxStopTask(self.do_handle)
+        DAQmxStopTask(self.ai_handle)
+
+        DAQmxClearTask(self.do_handle)
+        DAQmxClearTask(self.ai_handle)
 
 
+class MultiTask:
+    def __init__(self, ai_device, ai_channels, di_device, di_channels, do_device, samprate, secs, write, sync_clock):
+        self.ai_handle = TaskHandle(0)
+        self.di_handle = TaskHandle(1)
+        self.do_handle = TaskHandle(2)
+
+        DAQmxCreateTask("", byref(self.ai_handle))
+        DAQmxCreateTask("", byref(self.di_handle))
+        DAQmxCreateTask("", byref(self.do_handle))
+
+        # NOTE - Cfg_Default values may differ for different DAQ hardware
+        DAQmxCreateAIVoltageChan(self.ai_handle, ai_device, "", DAQmx_Val_Cfg_Default, -10.0, 10.0, DAQmx_Val_Volts,
+                                 None)
+        DAQmxCreateDIChan(self.di_handle, di_device, "", DAQmx_Val_ChanPerLine)
+
+        self.ai_read = int32()
+        self.di_read = int32()
+        self.ai_channels = ai_channels
+        self.di_channels = di_channels
+        self.totalLength = numpy.uint32(samprate * secs)
+        self.analogData = numpy.zeros((self.ai_channels, self.totalLength), dtype=numpy.float64)
+        self.digitalData = numpy.ones((self.di_channels, self.totalLength), dtype=numpy.uint32)
+
+        DAQmxCfgSampClkTiming(self.ai_handle, '', samprate, DAQmx_Val_Rising, DAQmx_Val_FiniteSamps,
+                              numpy.uint64(self.totalLength))
+        DAQmxCfgSampClkTiming(self.di_handle, sync_clock, samprate, DAQmx_Val_Rising, DAQmx_Val_FiniteSamps,
+                              numpy.uint64(self.totalLength))
+
+    def DoTask(self):
+        DAQmxStartTask(self.di_handle)
+        DAQmxStartTask(self.ai_handle)
+
+        DAQmxReadAnalogF64(self.ai_handle, self.totalLength, -1, DAQmx_Val_GroupByChannel, self.analogData,
+                           self.totalLength * self.ai_channels, byref(self.ai_read), None)
+        DAQmxReadDigitalU32(self.di_handle, self.totalLength, -1, DAQmx_Val_GroupByChannel, self.digitalData,
+                            self.totalLength * self.di_channels, byref(self.di_read), None)
 
 
-
-
-# TODO - write multi tasks
 
 # TODO TESTING #
+# region DoAiMultiTaskTest
+# a = DoAiMultiTask('cDAQ1Mod3/ai0', 1, 'cDAQ1Mod1/port0/line0', 1000.0, 1.0, numpy.zeros((2, 1000)),
+#                   '/cDAQ1/ai/SampleClock')
+# analog = a.DoTask()
+#
+# plt.plot(analog[0])
+# plt.show()
+# endregion
 
+# region simple digital test
+# DigitalOutput test
+# a = DigitalOut('cDAQ1Mod1/port0/line0:1', 1, 1000, numpy.zeros((2, 1000)), clock='')
+# a.DoTask()
+
+# DigitalInput test
+# a = DigitalInput('cDAQ1Mod2/port0/line0', 1, 1000, 1)
+# a.DoTask()
+# endregion
+
+# MultiTask test
+# a = MultiTask('cDAQ1Mod3/ai0', 1, 'cDAQ1Mod2/port0/line0', 1, 'cDAQ1Mod1/port0/line0', 1000, 2, numpy.zeros((1, 2000),
+#               dtype=numpy.uint32), '/cDAQ1/ai/SampleClock')
+#
+# a.DoTask()
+#
+# plt.plot(a.digitalData[0])
+# plt.show()
+
+# AnalogInput
 # a = AnalogInput('cDAQ1Mod3/ai0', 1, 1000, 1)
 # a.DoTask()
 #
