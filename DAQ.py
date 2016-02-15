@@ -190,8 +190,7 @@ class DoAiMultiTask:
         DAQmxCreateTask("", byref(self.ai_handle))
         DAQmxCreateTask("", byref(self.do_handle))
 
-        DAQmxCreateAIVoltageChan(self.ai_handle, ai_device, "", DAQmx_Val_Diff, -10.0, 10.0, DAQmx_Val_Volts,
-                                 None)
+        DAQmxCreateAIVoltageChan(self.ai_handle, ai_device, "", DAQmx_Val_Diff, -10.0, 10.0, DAQmx_Val_Volts, None)
         DAQmxCreateDOChan(self.do_handle, do_device, "", DAQmx_Val_ChanPerLine)
 
         self.ai_read = int32()
