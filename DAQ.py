@@ -116,13 +116,11 @@ class AnalogInput(Task):
         self.AutoRegisterDoneEvent(0)
 
     def DoTask(self):
-        print('Starting analog input')
         self.StartTask()
         self.ReadAnalogF64(self.totalLength, -1, DAQmx_Val_GroupByChannel, self.analogRead,
                            self.totalLength * self.channels, byref(self.read), None)
 
     def DoneCallback(self, status):
-        print status
         self.StopTask()
         self.ClearTask()
         return 0
