@@ -167,7 +167,7 @@ class AnalogOutput(Task):
 
     def DoTask(self):
         self.WriteAnalogF64(self.write.shape[1], 0, -1, DAQmx_Val_GroupByChannel,
-                            writeAO, byref(sampsPerChanWrittenAO), None)
+                            self.write, byref(self.sampsPerChanWritten), None)
         self.StartTask()
 
     def DoneCallback(self, status):
