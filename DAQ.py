@@ -226,6 +226,54 @@ class DoAiMultiTask:
         DAQmxClearTask(self.ai_handle)
 
 
+class AoAiMultiTask:
+    def __init__(self, ai_device, ai_channels, ao_device, samprate, secs, write, sync_clock):
+        self.ai_handle = TaskHandle(0)
+        self.ao_handle = TaskHandle(1)
+
+        DAQmxCreateTask("", byref(self.ai_handle))
+        DAQmxCreateTask("", byref(self.ao_handle))
+
+        self.sampsPerChanWritten = int32()
+        self.write = write
+        self.totalLength = numpy.uint32(samprate * secs)
+
+        self.ai_read = int32()
+        self.ai_channels = ai_channels
+        self.analogData = numpy.zeros((self.ai_channels, self.totalLength), dtype=numpy.float64)
+
+        DAQmxCreateAIVoltageChan(self.ai_handle, ai_device, "", DAQmx_Val_Cfg_Default, -10.0, 10.0, DAQmx_Val_Volts,
+                                 None)
+        DAQmxCreateAOVoltageChan(self.ao_handle, ao_device, "", -10.0, 10.0, DAQmx_Val_Volts, None)
+
+        DAQmxCfgSampClkTiming(self.ai_handle, '', samprate, DAQmx_Val_Rising, DAQmx_Val_FiniteSamps,
+                              numpy.uint64(self.totalLength))
+        DAQmxCfgSampClkTiming(self.ao_handle, sync_clock, samprate, DAQmx_Val_Rising, DAQmx_Val_FiniteSamps,
+                              numpy.uint64(self.totalLength))
+
+    def DoTask(self):
+        DAQmxWriteAnalogF64(self.ao_handle, self.write.shape[1], 0, -1, DAQmx_Val_GroupByChannel,
+                            self.write, byref(self.sampsPerChanWritten), None)
+
+        DAQmxStartTask(self.ao_handle)
+        DAQmxStartTask(self.ai_handle)
+
+        DAQmxReadAnalogF64(self.ai_handle, self.totalLength, -1, DAQmx_Val_GroupByChannel, self.analogData,
+                           numpy.uint32(self.ai_channels*self.totalLength), byref(self.ai_read), None)
+
+        self.ClearTasks()
+        return self.analogData
+
+    def ClearTasks(self):
+        time.sleep(0.05)
+        DAQmxStopTask(self.ao_handle)
+        DAQmxStopTask(self.ai_handle)
+
+        DAQmxClearTask(self.ao_handle)
+        DAQmxClearTask(self.ai_handle)
+
+
+
 class MultiTask:
     def __init__(self, ai_device, ai_channels, di_device, di_channels, do_device, samprate, secs, write, sync_clock):
         self.ai_handle = TaskHandle(0)
