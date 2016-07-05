@@ -38,7 +38,7 @@ class DigitalInput(Task):
                             self.totalLength * self.channels, byref(self.read), None)
 
     def DoneCallback(self, status):
-        print status
+        print(status)
         self.StopTask()
         self.ClearTask()
         return 0
@@ -65,7 +65,7 @@ class TriggeredDigitalInput(Task):
                             self.totalLength * self.channels, byref(self.read), None)
 
     def DoneCallback(self, status):
-        print status.value
+        print(status.value)
         self.StopTask()
         self.ClearTask()
         return 0
@@ -92,7 +92,7 @@ class DigitalOut(Task):
         self.StartTask()
 
     def DoneCallback(self, status):
-        print status
+        print(status)
         self.StopTask()
         self.ClearTask()
         return 0
@@ -147,7 +147,7 @@ class TriggeredAnalogInput(Task):
                            self.totalLength * self.channels, byref(self.read), None)
 
     def DoneCallback(self, status):
-        print status
+        print(status)
         self.StopTask()
         self.ClearTask()
         return 0
@@ -171,7 +171,7 @@ class AnalogOutput(Task):
         self.StartTask()
 
     def DoneCallback(self, status):
-        print status
+        print(status)
         self.StopTask()
         self.ClearTask()
         return 0
