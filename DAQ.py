@@ -8,7 +8,7 @@ Created on Tue Dec 15 13:51:48 2015
 # region [Import]
 from PyDAQmx import *
 from ctypes import *
-import Utils as Util
+import daqface.Utils as Util
 import numpy
 import matplotlib.pyplot as plt
 import time
