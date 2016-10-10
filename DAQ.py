@@ -126,6 +126,35 @@ class AnalogInput(Task):
         return 0
 
 
+class ThreadSafeAnalogInput:
+    def __init__(self, ai_device, channels, samp_rate, secs, clock=''):
+        self.ai_handle = TaskHandle(0)
+
+        DAQmxCreateTask("", byref(self.ai_handle))
+
+        DAQmxCreateAIVoltageChan(self.ai_handle, ai_device, "", DAQmx_Val_Diff, -10.0, 10.0, DAQmx_Val_Volts, None)
+
+        self.ai_read = int32()
+        self.ai_channels = channels
+        self.totalLength = numpy.uint64(samp_rate * secs)
+        self.analogData = numpy.zeros((self.ai_channels, self.totalLength), dtype=numpy.float64)
+
+        DAQmxCfgSampClkTiming(self.ai_handle, '', samp_rate, DAQmx_Val_Rising, DAQmx_Val_FiniteSamps,
+                              numpy.uint64(self.totalLength))
+
+    def DoTask(self):
+        DAQmxStartTask(self.ai_handle)
+        DAQmxReadAnalogF64(self.ai_handle, self.totalLength, -1, DAQmx_Val_GroupByChannel, self.analogData,
+                           numpy.uint32(self.ai_channels*self.totalLength), byref(self.ai_read), None)
+        self.ClearTasks()
+        return self.analogData
+
+    def ClearTasks(self):
+        time.sleep(0.05)
+        DAQmxStopTask(self.ai_handle)
+        DAQmxClearTask(self.ai_handle)
+
+
 class TriggeredAnalogInput(Task):
     def __init__(self, device, channels, samprate, secs, trigger_source, clock=''):
         Task.__init__(self)
