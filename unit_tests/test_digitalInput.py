@@ -1,7 +1,7 @@
 # region [Import]
 from unittest import TestCase
 import PyDAQmx
-import DAQ
+from daqface import DAQ
 import numpy as np
 
 
