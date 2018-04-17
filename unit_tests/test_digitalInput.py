@@ -2,7 +2,7 @@
 from unittest import TestCase
 import PyDAQmx
 import DAQ
-import numpy
+import numpy as np
 
 
 class TestDigitalInput(TestCase):
@@ -15,7 +15,7 @@ class TestDigitalInput(TestCase):
         di = DAQ.DigitalInput('cDAQ1Mod2/port0/line0', 1, 1000, 1)
         di.DoTask()
 
-        self.assertEqual(numpy.sum(di.digitalData[0]), 0)
+        self.assertEqual(np.sum(di.digitalData[0]), 0)
 
     def test_digital_data_shape(self):
         di = DAQ.DigitalInput('cDAQ1Mod2/port0/line0:1', 2, 1000, 3)
@@ -23,5 +23,5 @@ class TestDigitalInput(TestCase):
 
         print(di.digitalData.shape)
 
-        self.assertEqual(di.digitalData.shape[0] * di.digitalData.shape[1], 2*1000*3)
-
+        self.assertEqual(di.digitalData.shape[0] * di.digitalData.shape[1],
+                         2 * 1000 * 3)
