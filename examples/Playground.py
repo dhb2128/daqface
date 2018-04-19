@@ -6,7 +6,7 @@ Created on Wed Dec 16 14:06:35 2015
 """
 
 from PyDAQmx import Task
-from numpy import zeros
+import numpy as np
 
 """This example is a PyDAQmx version of the ContAcq_IntClk.c example
 It illustrates the use of callback functions
@@ -19,7 +19,7 @@ in a Python list.
 class CallbackTask(Task):
     def __init__(self):
         Task.__init__(self)
-        self.data = zeros(1000)
+        self.data = np.zeros(1000)
         self.a = []
         self.CreateAIVoltageChan("cDAQ1Mod3/ai0","",DAQmx_Val_Cfg_Default,-10.0,10.0,DAQmx_Val_Volts,None)
         self.CfgSampClkTiming("",10000.0,DAQmx_Val_Rising,DAQmx_Val_ContSamps,1000)

@@ -81,7 +81,7 @@ class DigitalOut(Task):
 
         self.AutoRegisterDoneEvent(0)
 
-        self.write = Util.binaryToDigitalMap(write)
+        self.write = Util.binary_to_digital_map(write)
 
     def DoTask(self):
         print ('Starting digital output')
